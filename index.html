@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gestión Motores">
+    
+    <title>Gestión de Motores Industriales</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkdlc3Rpw7NuIGRlIE1vdG9yZXMgSW5kdXN0cmlhbGVzIiwKICAic2hvcnRfbmFtZSI6ICJNb3RvcmVzIiwKICAiZGVzY3JpcHRpb24iOiAiU2lzdGVtYSBkZSBtb25pdG9yZW8geSByZWdpc3RybyBkZSBtb3RvcmVzIGluZHVzdHJpYWxlcyIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNjY3ZWVhIiwKICAidGhlbWVfY29sb3IiOiAiIzM0OThkYiIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFCZ0FBQUFZQ0FZQUFBR0o5SUtBQUFBQkJrbFRRVlI0QWUzVk1uZkF4SEZFUWdpQUFORFg1UHQzTytmdEJ1b3ZzVVU1QWFDbUV5N2JHRjVEdExZZFNvdjE2QWJtZ2ZKR0Z3VUhycERnSjg0d1A1OHdKS0FxQjZqOWNST25DSmxpYWdtZUFDRE9jNmpoeHF3bElnSFlzeGZod3ppTmxJQURBNEIrNTZKZEZKdGd5Q2JlWXNsQUVNeWVjRXNhQUVKQUNCczZqaExKcWMrR0JjSEEySUJCcUpwSnh0NUF5d0FHSFF3RDI2OFQySGxJeGc2Y1hKL25tYXNIZWM0RllDWUFBdG5VZ0c2VXF3WnlncVFwUlVOa2hkSXhqWVlxbnV5RGdCRzhBQUExRnJCVlB3bERROER3QVFQa3JWQUVBSUdNUUVERFJwVGlvOWw0eGlmcW5qUnJRNEE3aGVJQUQxUmNjWllYTHpZQ1JmbFVxbVJaTUE4b3Q0Q1g2MmVuL284MDg1WC9JQ3FJZ0JBQVgxRVJFTzdvcGV5TGp3OGVrZCtNTklyYUt6alFjajM0bXhCWUFBQUFBQWk0Y0VBRC9jUUkwSXFJQUlJc1hoQWUzVk1uZkF4SEZFUWdpQUFORFg1UHQzTytmdEJ1b3ZzVVU1QWFDbUV5N2JHRjVEdExZZFNvdjE2QWJtZ2ZKR0Z3VUhycERnSjg0d1A1OHdKS0FxQjZqOWNST25DSmxpYWdtZUFDRE9jNmpoeHF3bElnSFlzeGZod3ppTmxJQURBNEIrNTZKZEZKdGd5Q2JlWXNsQUVNeWVjRXNhQUVKQUNCczZqaExKcWMrR0JjSEEySUJCcUpwSnh0NUF5d0FHSFF3RDI2OFQySGxJeGc2Y1hKL25tYXNIZWM0RllDWUFBdG5VZ0c2VXF3WnlncVFwUlVOa2hkSXhqWVlxbnV5RGdCRzhBQUExRnJCVlB3bERROER3QVFQa3JWQUVBSUdNUUVERFJwVGlvOWw0eGlmcW5qUnJRNEE3aGVJQUQxUmNjWllYTHpZQ1JmbFVxbVJaTUE4b3Q0Q1g2MmVuL284MDg1WC9JQ3FJZ0JBQVgxRVJFTzdvcGV5TGp3OGVrZCtNTklyYUt6alFjajM0bXhCWUFBQUFBQWk0Y0VBRC9jUUkwSXFJQSIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0sCiAgImNhdGVnb3JpZXMiOiBbImJ1c2luZXNzIiwgInV0aWxpdGllcyIsICJwcm9kdWN0aXZpdHkiXSwKICAibGFuZyI6ICJlcyIKfQ==">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZc7SwNBEIafQqxsLWxsLLSxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGxsLGx">
+    
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            padding: 8px;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            min-height: calc(100vh - 16px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success-color);
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.offline {
+            background: var(--danger-color);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .motor-counter {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sync-info {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            max-height: calc(100vh - 280px);
+        }
+
+        .section-header {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            margin: 10px -15px 8px -15px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            font-size: 14px;
+        }
+
+        .field-group {
+            margin-bottom: 12px;
+        }
+
+        .field-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+
+        .field-label {
+            flex: 0 0 120px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 13px;
+        }
+
+        .field-input {
+            flex: 1;
+            padding: 6px 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .field-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        .comments-area {
+            width: 100%;
+            min-height: 60px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .vibration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+
+        .btn {
+            padding: 10px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+            touch-action: manipulation;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-nav { background: #95a5a6; }
+        .btn-load { background: var(--warning-color); }
+        .btn-save { background: var(--success-color); }
+        .btn-export { background: #2ecc71; }
+        .btn-new { background: var(--danger-color); }
+        .btn-sync { background: #9b59b6; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close {
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            z-index: 1001;
+            opacity: 0;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .toast.show {
+            opacity: 1;
+            bottom: 30px;
+        }
+
+        .toast.success { background: var(--success-color); }
+        .toast.error { background: var(--danger-color); }
+        .toast.warning { background: var(--warning-color); }
+
+        .storage-info {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .field-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .field-label {
+                flex: none;
+                margin-bottom: 4px;
+            }
+            
+            .button-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vibration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+        }
+
+        /* Animaciones de carga */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Instalación PWA */
+        .install-prompt {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: 999;
+        }
+
+        .install-prompt.show {
+            transform: translateY(0);
+        }
+
+        .install-btn {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <h1>⚙️ Gestión de Motores</h1>
+            <p>Sistema Industrial Offline/Online</p>
+        </div>
+
+        <div class="motor-counter">
+            <span id="motorCounter">Motor 1 de 1</span>
+            <span class="sync-info" id="syncInfo">🔄 Sincronizado</span>
+        </div>
+
+        <div class="form-container">
+            <!-- Título -->
+            <div class="field-group">
+                <div class="field-row">
+                    <label class="field-label">Título:</label>
+                    <input type="text" class="field-input" id="Titulo" placeholder="Nombre del motor">
+                </div>
+            </div>
+
+            <!-- Vibración -->
+            <div class="section-header">📊 VIBRACIÓN</div>
+            <div class="vibration-grid">
+                <div class="field-row">
+                    <label class="field-label">V1 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="V1_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">V1 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="V1_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">V2 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="V2_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">V2 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="V2_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">V3 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="V3_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">V3 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="V3_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">H1 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="H1_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">H1 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="H1_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">H2 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="H2_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">H2 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="H2_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">A1 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="A1_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">A1 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="A1_gE">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">A2 mm/s:</label>
+                    <input type="number" step="0.01" class="field-input" id="A2_mm_s">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">A2 gE:</label>
+                    <input type="number" step="0.01" class="field-input" id="A2_gE">
+                </div>
+            </div>
+
+            <!-- Temperatura y Eléctricos -->
+            <div class="section-header">🌡️ TEMPERATURA Y ELÉCTRICOS</div>
+            <div class="field-group">
+                <div class="field-row">
+                    <label class="field-label">Estator °C:</label>
+                    <input type="number" step="0.1" class="field-input" id="Estator">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">Rodamiento °C:</label>
+                    <input type="number" step="0.1" class="field-input" id="Rodamiento">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">EjeReduc °C:</label>
+                    <input type="number" step="0.1" class="field-input" id="EjeReduc">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">Corriente A:</label>
+                    <input type="number" step="0.1" class="field-input" id="Corriente">
+                </div>
+                <div class="field-row">
+                    <label class="field-label">Tensión V:</label>
+                    <input type="number" step="0.1" class="field-input" id="Tension">
+                </div>
+            </div>
+
+            <!-- Comentarios -->
+            <div class="section-header">💬 COMENTARIOS</div>
+            <div class="field-group">
+                <textarea class="field-input comments-area" id="Comentarios" placeholder="Observaciones adicionales..."></textarea>
+            </div>
+
+            <!-- Info de almacenamiento -->
+            <div class="storage-info" id="storageInfo">
+                📁 Datos guardados localmente • Funciona offline
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="btn btn-nav" onclick="cambiarMotor(-1)">⬅️ Anterior</button>
+            <button class="btn btn-nav" onclick="cambiarMotor(1)">Siguiente ➡️</button>
+        </div>
+
+        <div class="button-grid">
+            <button class="btn btn-load" onclick="cargarProyecto()">📂 Cargar</button>
+            <button class="btn btn-save" onclick="guardarProyecto()">💾 Guardar</button>
+            <button class="btn btn-export" onclick="exportarDatos()">📤 Exportar</button>
+            <button class="btn btn-new" onclick="nuevoMotor()">➕ Nuevo</button>
+            <button class="btn btn-nav" onclick="eliminarMotor()">🗑️ Eliminar</button>
+            <button class="btn btn-sync" onclick="sincronizar()">🔄 Sync</button>
+        </div>
+    </div>
+
+    <!-- Toast para notificaciones -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Modal para mensajes -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Mensaje</h3>
+                <span class="close" onclick="cerrarModal()">&times;</span>
+            </div>
+            <p id="modalMessage"></p>
+            <button class="btn btn-save" onclick="cerrarModal()" style="margin-top: 15px; width: 100%;">OK</button>
+        </div>
+    </div>
+
+    <!-- Prompt de instalación PWA -->
+    <div id="installPrompt" class="install-prompt">
+        <p>📱 ¿Instalar como aplicación para usar offline?</p>
+        <button class="install-btn" onclick="instalarApp()">Instalar</button>
+        <button class="install-btn" onclick="ocultarInstall()">Ahora no</button>
+    </div>
+
+    <script>
+        // ============= ESTADO GLOBAL =============
+        let motores = [crearMotorVacio()];
+        let paginaActual = 0;
+        let isOnline = navigator.onLine;
+        let deferredPrompt = null;
+        let ultimaSync = new Date();
+
+        const campos = [
+            'Titulo', 'V1_mm_s', 'V1_gE', 'V2_mm_s', 'V2_gE', 'V3_mm_s', 'V3_gE',
+            'H1_mm_s', 'H1_gE', 'H2_mm_s', 'H2_gE', 'A1_mm_s', 'A1_gE', 'A2_mm_s', 'A2_gE',
+            'Estator', 'Rodamiento', 'EjeReduc', 'Corriente', 'Tension', 'Comentarios'
+        ];
+
+        // ============= FUNCIONES PRINCIPALES =============
+        function crearMotorVacio() {
+            const motor = {};
+            campos.forEach(campo => motor[campo] = '');
+            return motor;
+        }
+
+        function cargarPagina() {
+            const motor = motores[paginaActual];
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    elemento.value = motor[campo] || '';
+                }
+            });
+            
+            document.getElementById('motorCounter').textContent = 
+                `Motor ${paginaActual + 1} de ${motores.length}`;
+            
+            actualizarStorageInfo();
+        }
+
+        function guardarDatosPagina() {
+            const motor = motores[paginaActual];
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    motor[campo] = elemento.value;
+                }
+            });
+            guardarEnStorage();
+        }
+
+        function cambiarMotor(direccion) {
+            guardarDatosPagina();
+            const nuevaPagina = paginaActual + direccion;
+            
+            if (nuevaPagina >= 0 && nuevaPagina < motores.length) {
+                paginaActual = nuevaPagina;
+                cargarPagina();
+            }
+        }
+
+        function nuevoMotor() {
+            guardarDatosPagina();
+            motores.push(crearMotorVacio());
+            paginaActual = motores.length - 1;
+            cargarPagina();
+            mostrarToast('Nuevo motor creado', 'success');
+        }
+
+        function eliminarMotor() {
+            if (motores.length <= 1) {
+                mostrarToast('No se puede eliminar el último motor', 'error');
+                return;
+            }
+            
+            if (confirm('¿Eliminar este motor?')) {
+                motores.splice(paginaActual, 1);
+                if (paginaActual >= motores.length) {
+                    paginaActual = motores.length - 1;
+                }
+                cargarPagina();
+                mostrarToast('Motor eliminado', 'success');
+            }
+        }
+
+        // ============= ALMACENAMIENTO OFFLINE =============
+        function guardarEnStorage() {
+            try {
+                const data = {
+                    version: '2.0',
+                    fecha_guardado: new Date().toISOString(),
+                    pagina_actual: paginaActual,
+                    motores: motores,
+                    ultima_sync: ultimaSync.toISOString()
+                };
+                localStorage.setItem('motores_data', JSON.stringify(data));
+                localStorage.setItem('motores_backup', JSON.stringify(data));
+            } catch (error) {
+                console.error('Error guardando en storage:', error);
+                mostrarToast('Error guardando datos localmente', 'error');
+            }
+        }
+
+        function cargarDeStorage() {
+            try {
+                const data = localStorage.getItem('motores_data');
+                if (data) {
+                    const parsed = JSON.parse(data);
+                    if (parsed.motores && Array.isArray(parsed.motores)) {
+                        motores = parsed.motores;
+                        paginaActual = Math.min(parsed.pagina_actual || 0, motores.length - 1);
+                        ultimaSync = new Date(parsed.ultima_sync || Date.now());
+                        cargarPagina();
+                        return true;
+                    }
+                }
+            } catch (error) {
+                console.error('Error cargando de storage:', error);
+                // Intentar backup
+                try {
+                    const backup = localStorage.getItem('motores_backup');
+                    if (backup) {
+                        const parsed = JSON.parse(backup);
+                        motores = parsed.motores || [crearMotorVacio()];
+                        paginaActual = 0;
+                        mostrarToast('Datos restaurados desde backup', 'warning');
+                        return true;
+                    }
+                } catch (backupError) {
+                    console.error('Error cargando backup:', backupError);
+                }
+            }
+            return false;
+        }
+
+        function limpiarStorage() {
+            if (confirm('¿Eliminar todos los datos locales?')) {
+                localStorage.removeItem('motores_data');
+                localStorage.removeItem('motores_backup');
+                motores = [crearMotorVacio()];
+                paginaActual = 0;
+                cargarPagina();
+                mostrarToast('Datos locales eliminados', 'success');
+            }
+        }
+
+        function obtenerTamañoStorage() {
+            try {
+                const data = localStorage.getItem('motores_data') || '{}';
+                const sizeKB = Math.round(new Blob([data]).size / 1024);
+                return sizeKB;
+            } catch (error) {
+                return 0;
+            }
+        }
+
+        function actualizarStorageInfo() {
+            const info = document.getElementById('storageInfo');
+            const sizeKB = obtenerTamañoStorage();
+            const statusText = isOnline ? '🌐 Online' : '📴 Offline';
+            const syncText = new Date(ultimaSync).toLocaleTimeString();
+            
+            info.innerHTML = `
+                📁 ${motores.length} motor(es) • ${sizeKB}KB • ${statusText}<br>
+                🔄 Última sync: ${syncText}
+            `;
+        }
+
+        // ============= GESTIÓN DE ARCHIVOS =============
+        function cargarProyecto() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            if (data.motores && Array.isArray(data.motores)) {
+                                motores = data.motores;
+                                paginaActual = Math.min(data.pagina_actual || 0, motores.length - 1);
+                                ultimaSync = new Date();
+                                cargarPagina();
+                                guardarEnStorage();
+                                mostrarToast(`Proyecto cargado: ${motores.length} motor(es)`, 'success');
+                            } else {
+                                throw new Error('Formato de archivo inválido');
+                            }
+                        } catch (error) {
+                            mostrarToast('Error al cargar el archivo: ' + error.message, 'error');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            input.click();
+        }
+
+        function guardarProyecto() {
+            guardarDatosPagina();
+            
+            const data = {
+                version: '2.0',
+                fecha_guardado: new Date().toISOString(),
+                pagina_actual: paginaActual,
+                motores: motores,
+                metadata: {
+                    total_motores: motores.length,
+                    dispositivo: navigator.userAgent.includes('Mobile') ? 'móvil' : 'escritorio',
+                    navegador: navigator.userAgent
+                }
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `motores_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.json`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            ultimaSync = new Date();
+            guardarEnStorage();
+            mostrarToast('Proyecto guardado correctamente', 'success');
+        }
+
+        function exportarDatos() {
+            guardarDatosPagina();
+            
+            let contenido = `REPORTE DE MOTORES INDUSTRIALES\n`;
+            contenido += `Generado: ${new Date().toLocaleString()}\n`;
+            contenido += `Total de motores: ${motores.length}\n\n`;
+            contenido += '='.repeat(80) + '\n\n';
+            
+            motores.forEach((motor, index) => {
+                const titulo = motor.Titulo || `Motor ${index + 1}`;
+                contenido += `=== ${titulo.toUpperCase()} ===\n\n`;
+                
+                // Comentarios primero
+                if (motor.Comentarios && motor.Comentarios.trim()) {
+                    contenido += `COMENTARIOS:\n${motor.Comentarios}\n\n`;
+                }
+                
+                // Vibración
+                const vibracion = ['V1_mm_s', 'V1_gE', 'V2_mm_s', 'V2_gE', 'V3_mm_s', 'V3_gE', 
+                                 'H1_mm_s', 'H1_gE', 'H2_mm_s', 'H2_gE', 'A1_mm_s', 'A1_gE', 'A2_mm_s', 'A2_gE'];
+                const hayVibracion = vibracion.some(campo => motor[campo] && motor[campo].trim());
+                
+                if (hayVibracion) {
+                    contenido += 'VIBRACIÓN:\n';
+                    vibracion.forEach(campo => {
+                        if (motor[campo] && motor[campo].trim()) {
+                            const etiqueta = campo.replace('_mm_s', ' mm/s').replace('_gE', ' gE');
+                            contenido += `  ${etiqueta}: ${motor[campo]}\n`;
+                        }
+                    });
+                    contenido += '\n';
+                }
+                
+                // Temperatura
+                const temperatura = ['Estator', 'Rodamiento', 'EjeReduc'];
+                const hayTemperatura = temperatura.some(campo => motor[campo] && motor[campo].trim());
+                
+                if (hayTemperatura) {
+                    contenido += 'TEMPERATURA:\n';
+                    temperatura.forEach(campo => {
+                        if (motor[campo] && motor[campo].trim()) {
+                            contenido += `  ${campo}: ${motor[campo]}°C\n`;
+                        }
+                    });
+                    contenido += '\n';
+                }
+                
+                // Eléctricos
+                const electricos = ['Corriente', 'Tension'];
+                const hayElectricos = electricos.some(campo => motor[campo] && motor[campo].trim());
+                
+                if (hayElectricos) {
+                    contenido += 'PARÁMETROS ELÉCTRICOS:\n';
+                    if (motor.Corriente && motor.Corriente.trim()) {
+                        contenido += `  Corriente: ${motor.Corriente}A\n`;
+                    }
+                    if (motor.Tension && motor.Tension.trim()) {
+                        contenido += `  Tensión: ${motor.Tension}V\n`;
+                    }
+                    contenido += '\n';
+                }
+                
+                contenido += '='.repeat(80) + '\n\n';
+            });
+            
+            // Estadísticas finales
+            contenido += 'RESUMEN ESTADÍSTICO:\n';
+            const conDatos = motores.filter(m => campos.some(c => m[c] && m[c].trim())).length;
+            const conComentarios = motores.filter(m => m.Comentarios && m.Comentarios.trim()).length;
+            contenido += `- Motores con datos: ${conDatos}/${motores.length}\n`;
+            contenido += `- Motores con comentarios: ${conComentarios}/${motores.length}\n`;
+            contenido += `- Archivo generado en modo: ${isOnline ? 'online' : 'offline'}\n`;
+            
+            const blob = new Blob([contenido], {type: 'text/plain;charset=utf-8'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `reporte_motores_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.txt`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            mostrarToast('Reporte exportado correctamente', 'success');
+        }
+
+        // ============= SINCRONIZACIÓN =============
+        function sincronizar() {
+            if (!isOnline) {
+                mostrarToast('Sin conexión. Datos guardados localmente', 'warning');
+                return;
+            }
+            
+            // Simular sincronización con servidor
+            const btn = document.querySelector('.btn-sync');
+            btn.classList.add('loading');
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                ultimaSync = new Date();
+                guardarEnStorage();
+                actualizarStorageInfo();
+                btn.classList.remove('loading');
+                btn.disabled = false;
+                mostrarToast('Sincronización completada', 'success');
+            }, 2000);
+        }
+
+        // ============= INTERFAZ Y EVENTOS =============
+        function mostrarToast(mensaje, tipo = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = mensaje;
+            toast.className = `toast ${tipo} show`;
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function mostrarMensaje(titulo, mensaje) {
+            document.getElementById('modalTitle').textContent = titulo;
+            document.getElementById('modalMessage').textContent = mensaje;
+            document.getElementById('messageModal').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+
+        function actualizarEstadoConexion() {
+            const indicator = document.getElementById('statusIndicator');
+            const syncInfo = document.getElementById('syncInfo');
+            
+            if (isOnline) {
+                indicator.classList.remove('offline');
+                syncInfo.textContent = '🌐 Conectado';
+            } else {
+                indicator.classList.add('offline');
+                syncInfo.textContent = '📴 Sin conexión';
+            }
+            
+            actualizarStorageInfo();
+        }
+
+        // ============= PWA INSTALACIÓN =============
+        function mostrarPromptInstall() {
+            const prompt = document.getElementById('installPrompt');
+            if (!localStorage.getItem('install_dismissed') && !window.matchMedia('(display-mode: standalone)').matches) {
+                setTimeout(() => {
+                    prompt.classList.add('show');
+                }, 3000);
+            }
+        }
+
+        function instalarApp() {
+            const prompt = document.getElementById('installPrompt');
+            prompt.classList.remove('show');
+            
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        mostrarToast('¡Aplicación instalada correctamente!', 'success');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                // Para iOS o navegadores que no soportan install prompt
+                mostrarMensaje('Instalar App', 
+                    'Para instalar:\n\n📱 iOS: Toca "Compartir" > "Agregar a pantalla de inicio"\n\n🤖 Android: Toca el menú > "Instalar aplicación"');
+            }
+        }
+
+        function ocultarInstall() {
+            document.getElementById('installPrompt').classList.remove('show');
+            localStorage.setItem('install_dismissed', 'true');
+        }
+
+        // ============= SERVICE WORKER =============
+        function registrarServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                    const CACHE_NAME = 'motores-v2';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.addAll(urlsToCache))
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => {
+                                    if (response) return response;
+                                    return fetch(event.request);
+                                })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], {type: 'application/javascript'});
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(() => console.log('Service Worker registrado'))
+                    .catch(err => console.log('Error registrando Service Worker:', err));
+            }
+        }
+
+        // ============= INICIALIZACIÓN =============
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar datos guardados
+            if (!cargarDeStorage()) {
+                cargarPagina();
+            }
+            
+            // Registrar service worker
+            registrarServiceWorker();
+            
+            // Auto-guardar datos al cambiar
+            campos.forEach(campo => {
+                const elemento = document.getElementById(campo);
+                if (elemento) {
+                    elemento.addEventListener('input', () => {
+                        guardarDatosPagina();
+                        actualizarStorageInfo();
+                    });
+                }
+            });
+            
+            // Estado de conexión
+            actualizarEstadoConexion();
+            
+            // Mostrar prompt de instalación
+            mostrarPromptInstall();
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey || e.metaKey) {
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            cambiarMotor(-1);
+                            break;
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            cambiarMotor(1);
+                            break;
+                        case 's':
+                            e.preventDefault();
+                            guardarProyecto();
+                            break;
+                        case 'n':
+                            e.preventDefault();
+                            nuevoMotor();
+                            break;
+                        case 'l':
+                            e.preventDefault();
+                            cargarProyecto();
+                            break;
+                        case 'e':
+                            e.preventDefault();
+                            exportarDatos();
+                            break;
+                    }
+                }
+            });
+        });
+
+        // ============= EVENT LISTENERS =============
+        
+        // Detectar cambios de conexión
+        window.addEventListener('online', () => {
+            isOnline = true;
+            actualizarEstadoConexion();
+            mostrarToast('Conexión restaurada', 'success');
+        });
+
+        window.addEventListener('offline', () => {
+            isOnline = false;
+            actualizarEstadoConexion();
+            mostrarToast('Sin conexión - Modo offline activo', 'warning');
+        });
+
+        // PWA install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        // Cerrar modal al hacer click fuera
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('messageModal');
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        });
+
+        // Prevenir zoom en dispositivos móviles
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+
+        // Prevenir pull-to-refresh en dispositivos móviles
+        document.body.addEventListener('touchmove', function(e) {
+            if (e.targetTouches.length === 1) {
+                e.preventDefault();
+            }
+        }, {passive: false});
+
+        // Auto-sync periódico cuando hay conexión
+        setInterval(() => {
+            if (isOnline && new Date() - ultimaSync > 300000) { // 5 minutos
+                sincronizar();
+            }
+        }, 60000); // Verificar cada minuto
+
+        console.log('🚀 PWA Gestión de Motores cargada correctamente');
+        console.log('📱 Modo:', window.matchMedia('(display-mode: standalone)').matches ? 'App instalada' : 'Navegador web');
+        console.log('🌐 Estado:', navigator.onLine ? 'Online' : 'Offline');
+    </script>
+</body>
+  </html>
